@@ -157,3 +157,8 @@ def check_preg_replace():
         "! find src -name '*.php' -print0 | "
         "xargs -0 grep -n 'preg_replace('"
     )
+
+@sniff(severity='major', timing='fast')
+def check_python_code_complexity():
+    info('Checking code complexity...')
+    return local("xenon xenon -bB -mA -aA")
